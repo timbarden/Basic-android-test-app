@@ -1,3 +1,5 @@
 # android-java-sample
 
-🤖 A blank Android sample app.
+Based on:
+
+🤖 A blank Android sample app from https://github.com/robingenz/android-java-sample
