@@ -1,4 +1,4 @@
-# android-java-sample
+# Basic Android app for testing notifications
 
 Based on:
 
