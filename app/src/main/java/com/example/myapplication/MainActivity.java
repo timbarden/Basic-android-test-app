@@ -30,19 +30,18 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
 
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
-            if (!task.isSuccessful()) {
-                Log.w("FCMToken", "Fetching FCM registration token failed", task.getException());
-                return;
-            }
-            // Get new FCM registration token
-            String token = task.getResult();
-            Log.d("FCMToken", token);
-            // Send this token to your server to send notifications
+          if (!task.isSuccessful()) {
+            Log.w("FCMToken", "Fetching FCM registration token failed", task.getException());
+              return;
+          }
+          // Get new FCM registration token
+          String token = task.getResult();
+          Log.d("FCMToken", token);
         });
 
         setContentView(R.layout.activity_main);
 
-        // Add permission request dialog for notifications, so it runs after user has added a school
+        // Add permission request dialog for notifications
         if (!checkPostNotificationsPermission(getApplicationContext())) {
             requestPostNotificationsPermission();
         }

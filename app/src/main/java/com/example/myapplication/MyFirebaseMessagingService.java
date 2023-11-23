@@ -9,7 +9,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.d("onMessageReceived", "");
+        Log.d("onMessageReceived", remoteMessage.getFrom());
+
+        // Check if message contains a notification payload.
+        if (remoteMessage.getNotification() != null) {
+            Log.d("Message", "Message Notification Body: " + remoteMessage.getNotification().getBody());
+        }
+
+        // notification dialog here
     }
 
     @Override
